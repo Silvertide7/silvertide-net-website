@@ -7,6 +7,7 @@ import { Homebound } from './pages/Homebound'
 import { Alchemical } from './pages/Alchemical'
 import { AlchemicalBuilder } from './pages/AlchemicalBuilder'
 import { Kindred } from './pages/Kindred'
+import { PlayerAbilities } from './pages/PlayerAbilities'
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
           <Route path="alchemical" element={<Alchemical />} />
           <Route path="alchemical/ingredient-builder" element={<AlchemicalBuilder />} />
           <Route path="kindred" element={<Kindred />} />
+          <Route path="player-abilities" element={<PlayerAbilities />} />
         </Route>
       </Routes>
     </BrowserRouter>

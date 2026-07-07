@@ -13,6 +13,7 @@ const MODS: ModLink[] = [
   { path: '/homebound', label: 'Homebound', logo: '/homebound/logo_small.png' },
   { path: '/alchemical', label: 'Alchemical', logo: '/alchemical/elixir_logo_450.png' },
   { path: '/kindred', label: 'Kindred', logo: '/kindred/kindred_logo.png' },
+  { path: '/player-abilities', label: 'Player Abilities', logo: '/player-abilities/logo.png' },
 ]
 
 const linkBase =
