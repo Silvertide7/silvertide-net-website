@@ -917,6 +917,7 @@ Example (1.20.1):  attribute/minecraft:generic.attack_damage/addition/5/mainhand
             <DownloadLinks
               curseforgeUrl="https://www.curseforge.com/minecraft/mc-mods/artifactory"
               modrinthUrl="https://modrinth.com/mod/artifactory-mod"
+              discordUrl="https://discord.gg/cpRzXtSaSr"
             />
           </div>
         </div>

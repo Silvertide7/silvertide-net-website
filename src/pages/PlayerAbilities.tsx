@@ -1,5 +1,10 @@
 import { useState } from 'react'
+import { DownloadLinks } from '../components/DownloadLinks'
 import { VerticalTabNav } from '../components/VerticalTabNav'
+
+const CURSEFORGE_URL = 'https://www.curseforge.com/minecraft/mc-mods/player-abilities'
+const MODRINTH_URL = 'https://modrinth.com/mod/player-abilities'
+const DISCORD_URL = 'https://discord.gg/cpRzXtSaSr'
 
 const IMG = {
   title: '/player-abilities/title.png',
@@ -136,6 +141,13 @@ export const PlayerAbilities = () => {
           <VerticalTabNav tabs={TABS} activeTab={activeTab} onSelect={setActiveTab} />
         </div>
 
+        {/* Download: floats to the right on xl+ */}
+        <div className="pointer-events-none absolute top-0 bottom-0 left-[calc(50%+26rem+1.5rem)] hidden w-[18rem] xl:block [&>*]:pointer-events-auto">
+          <div className="sticky top-20">
+            <DownloadLinks curseforgeUrl={CURSEFORGE_URL} modrinthUrl={MODRINTH_URL} discordUrl={DISCORD_URL} />
+          </div>
+        </div>
+
         <Card className="mx-auto xl:w-[52rem]">
           {/* Tab bar (mobile / < xl) */}
           <div className="flex flex-wrap gap-1.5 border-b border-zinc-100 bg-zinc-50 px-4 py-3 xl:hidden dark:border-zinc-600 dark:bg-zinc-800/40">
@@ -170,6 +182,8 @@ export const PlayerAbilities = () => {
                 <span className="font-semibold">Player Abilities: Reverie</span>, which implements
                 18 abilities and doubles as the reference example for building your own.
               </P>
+
+              <DownloadLinks curseforgeUrl={CURSEFORGE_URL} modrinthUrl={MODRINTH_URL} discordUrl={DISCORD_URL} className="items-center xl:hidden" />
 
               <Figure
                 src={IMG.wheel}

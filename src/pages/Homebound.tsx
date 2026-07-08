@@ -365,6 +365,7 @@ export const Homebound = () => {
             <DownloadLinks
               curseforgeUrl="https://www.curseforge.com/minecraft/mc-mods/homebound"
               modrinthUrl="https://modrinth.com/mod/homebound-mod"
+              discordUrl="https://discord.gg/cpRzXtSaSr"
             />
           </div>
         </div>
