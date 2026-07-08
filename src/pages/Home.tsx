@@ -42,6 +42,16 @@ const mods: Mod[] = [
     tags: ['NeoForge 1.21.1'],
   },
   {
+    path: '/player-abilities',
+    logo: '/player-abilities/logo.png',
+    title: '/player-abilities/title.png',
+    titleAlt: 'Player Abilities',
+    centerTitle: true,
+    description:
+      'A framework for player abilities: castable actives, always-on passives, and triggered abilities that fire on their own when a condition is met. Levels, cooldowns, requirements, and full datapack configuration, with an API for building your own.',
+    tags: ['NeoForge 1.21.1'],
+  },
+  {
     path: '/alchemical',
     logo: '/alchemical/elixir_logo_450.png',
     title: '/alchemical/minecraft_title_hd.png',

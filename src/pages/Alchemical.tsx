@@ -1189,6 +1189,7 @@ export const Alchemical = () => {
             <DownloadLinks
               curseforgeUrl="https://www.curseforge.com/minecraft/mc-mods/alchemical"
               modrinthUrl="https://modrinth.com/mod/alchemical-mod"
+              discordUrl="https://discord.gg/cpRzXtSaSr"
             />
           </div>
         </div>

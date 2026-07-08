@@ -502,6 +502,7 @@ export const Kindred = () => {
             <DownloadLinks
               curseforgeUrl="https://www.curseforge.com/minecraft/mc-mods/kindred"
               modrinthUrl="https://modrinth.com/project/6M5GinSS"
+              discordUrl="https://discord.gg/cpRzXtSaSr"
             />
           </div>
         </div>
