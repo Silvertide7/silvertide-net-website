@@ -188,7 +188,7 @@ export const PlayerAbilities = () => {
               <Figure
                 src={IMG.wheel}
                 alt="The radial ability wheel in game"
-                caption="The radial ability wheel, showing a selected ability and its category page."
+                caption="The radial ability wheel, showing a selected ability and its category page. The abilities shown come from the Player Abilities: Reverie companion mod."
                 className="mx-auto max-w-md"
               />
 
@@ -521,7 +521,7 @@ export const PlayerAbilities = () => {
                 <FieldRow name="max_level" type="int" desc="Cap for the ability's level. Grants above it clamp down, including already-stored ones." />
                 <FieldRow name="category" type="resource location" desc="Grouping used by the wheel pages and ability book headers." />
                 <FieldRow name="attribute_grants" type="list" desc="For passives: attribute modifiers granted while active. Each entry is an attribute id, a per-level amount, and an operation (add_value, add_multiplied_base, add_multiplied_total). Replaces the ability's own list entirely when present." />
-                <FieldRow name="effect_grants" type="list" desc="For actives and triggered: vanilla mob effects applied on use. Each entry is an effect id, per-level duration_ticks, and optional per-level amplifier." />
+                <FieldRow name="effect_grants" type="list" desc="For actives and triggered: vanilla mob effects applied on use. Each entry is an effect id, per-level duration_ticks, optional per-level amplifier, and optional show_particles / show_icon flags (default true; set show_particles false for a hidden buff)." />
                 <FieldRow name="pmmo_use_requirement" type="object" desc="Project MMO skill and per-level skill level required to use the ability." />
                 <FieldRow name="pmmo_grants" type="list" desc="Project MMO skill levels that grant the ability automatically: skill, level, and the ability level given." />
                 <FieldRow name="puffish_grants" type="list" desc="Pufferfish's Skills nodes that grant the ability: category, skill node id, and ability level. Grants follow the tree, including respecs." />
