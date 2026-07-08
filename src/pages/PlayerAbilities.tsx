@@ -3,7 +3,24 @@ import { VerticalTabNav } from '../components/VerticalTabNav'
 
 const IMG = {
   title: '/player-abilities/title.png',
+  logo: '/player-abilities/logo.png',
+  wheel: '/player-abilities/screenshot-wheel.png',
+  hud: '/player-abilities/screenshot-hud.png',
+  bookActive: '/player-abilities/screenshot-book-active.png',
+  bookPassive: '/player-abilities/screenshot-book-passive.png',
+  bookTriggered: '/player-abilities/screenshot-book-triggered.png',
 }
+
+const Figure = ({ src, alt, caption, className = '' }: { src: string; alt: string; caption: string; className?: string }) => (
+  <figure className="my-1">
+    <img
+      src={src}
+      alt={alt}
+      className={`w-full rounded-lg border border-zinc-200 shadow-sm dark:border-zinc-600 ${className}`}
+    />
+    <figcaption className="mt-1.5 text-center text-xs text-zinc-400 dark:text-zinc-500">{caption}</figcaption>
+  </figure>
+)
 
 const Card = ({ children, className = '' }: { children: React.ReactNode; className?: string }) => (
   <section
@@ -39,6 +56,12 @@ const CodeBlock = ({ children }: { children: string }) => (
   <pre className="overflow-x-auto rounded-lg bg-zinc-900 p-4 font-mono text-xs leading-relaxed text-zinc-300">
     {children}
   </pre>
+)
+
+const Key = ({ children }: { children: React.ReactNode }) => (
+  <kbd className="mr-1 inline-flex min-w-[1.5rem] justify-center rounded border border-zinc-300 border-b-2 bg-zinc-100 px-1.5 py-0.5 font-mono text-xs font-semibold text-zinc-700 dark:border-zinc-600 dark:bg-zinc-800 dark:text-zinc-200">
+    {children}
+  </kbd>
 )
 
 const FieldRow = ({ name, type, desc }: { name: string; type: string; desc: string }) => (
@@ -103,7 +126,7 @@ export const PlayerAbilities = () => {
         <img
           src={IMG.title}
           alt="Player Abilities"
-          className="max-w-sm rounded-xl object-contain"
+          className="w-full max-w-xl rounded-xl object-contain"
         />
       </div>
 
@@ -147,6 +170,13 @@ export const PlayerAbilities = () => {
                 <span className="font-semibold">Player Abilities: Reverie</span>, which implements
                 18 abilities and doubles as the reference example for building your own.
               </P>
+
+              <Figure
+                src={IMG.wheel}
+                alt="The radial ability wheel in game"
+                caption="The radial ability wheel, showing a selected ability and its category page."
+                className="mx-auto max-w-md"
+              />
 
               <Divider />
 
@@ -216,29 +246,30 @@ export const PlayerAbilities = () => {
 
               <H2>Using abilities</H2>
               <P>
-                Four keybinds, all rebindable under the Player Abilities category in controls:
+                Four keybinds, all rebindable under the Player Abilities category in controls. The
+                defaults below don't conflict with any vanilla key:
               </P>
               <ul className="list-disc space-y-2 pl-6 text-base leading-relaxed text-zinc-600 dark:text-zinc-300">
                 <li>
-                  <span className="font-semibold">Ability Wheel</span> opens a radial selector of
-                  your active abilities, grouped into pages by category. Click a slice to select
-                  it.
+                  <Key>Z</Key> <span className="font-semibold">Ability Wheel</span> opens a radial
+                  selector of your active abilities, grouped into pages by category. Click a slice
+                  to select it, and scroll to page through categories.
                 </li>
                 <li>
-                  <span className="font-semibold">Use Selected Ability</span> fires the selected
-                  ability. For charged abilities you press once and the use bar fills; pressing
-                  again cancels. For channeled abilities the effect runs until the bar completes or
-                  you press again to stop.
+                  <Key>X</Key> <span className="font-semibold">Use Selected Ability</span> fires the
+                  selected ability. For charged abilities you press once and the use bar fills;
+                  pressing again cancels. For channeled abilities the effect runs until the bar
+                  completes or you press again to stop.
                 </li>
                 <li>
-                  <span className="font-semibold">Cycle Selected Ability</span> steps through your
-                  actives without opening the wheel.
+                  <Key>C</Key> <span className="font-semibold">Cycle Selected Ability</span> steps
+                  through your actives without opening the wheel.
                 </li>
                 <li>
-                  <span className="font-semibold">View Abilities</span> opens the ability book:
-                  every ability you know, tabbed by kind, with tooltips showing description,
-                  cooldown, level, and requirements. Passives are toggled on and off here with a
-                  click.
+                  <Key>N</Key> <span className="font-semibold">View Abilities</span> opens the
+                  ability book: every ability you know, tabbed by kind, with tooltips showing
+                  description, cooldown, level, and requirements. Passives are toggled on and off
+                  here with a click.
                 </li>
               </ul>
 
@@ -256,6 +287,12 @@ export const PlayerAbilities = () => {
                 lets you place the HUD in any corner of the screen. The wheel can group by category
                 or page through everything.
               </P>
+              <Figure
+                src={IMG.hud}
+                alt="The ability HUD showing the selected ability"
+                caption="The HUD cell: the selected ability's icon, name, and ready state."
+                className="mx-auto max-w-md"
+              />
             </div>
           )}
 
@@ -266,6 +303,11 @@ export const PlayerAbilities = () => {
                 Active abilities are the castable kind: the player selects one, presses the use
                 key, and something happens. Every active declares one of three use types.
               </P>
+              <Figure
+                src={IMG.bookActive}
+                alt="The ability book showing an active ability's tooltip"
+                caption="The ability book's Active tab, hovering Restful Meditation to show its tooltip."
+              />
               <div className="divide-y divide-zinc-100 dark:divide-zinc-600">
                 <FieldRow
                   name="INSTANT"
@@ -341,6 +383,11 @@ export const PlayerAbilities = () => {
                 re-grants the ability. Useful when an item magnet passive is picking up a
                 teammate's drops.
               </P>
+              <Figure
+                src={IMG.bookPassive}
+                alt="The ability book's Passive tab with a toggle"
+                caption="The Passive tab: Swift Step with its on/off toggle and hover tooltip."
+              />
             </div>
           )}
 
@@ -357,6 +404,11 @@ export const PlayerAbilities = () => {
                 implements what happens. Mods can define and fire their own trigger points; these
                 ship built in:
               </P>
+              <Figure
+                src={IMG.bookTriggered}
+                alt="The ability book's Triggered tab with a tooltip"
+                caption="The Triggered tab: Guardian Angel's tooltip showing its effect, kind, and cooldown."
+              />
 
               <Divider />
 
