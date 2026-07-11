@@ -39,7 +39,7 @@ const mods: Mod[] = [
     centerTitle: true,
     description:
       'Bond your tamed pets into a portable companion roster. Pets live on you, not in the world: they survive logouts, deaths, and dimension changes, and answer a single keypress from anywhere.',
-    tags: ['NeoForge 1.21.1'],
+    tags: ['Forge 1.20.1', 'NeoForge 1.21.1'],
   },
   {
     path: '/player-abilities',
@@ -49,7 +49,7 @@ const mods: Mod[] = [
     centerTitle: true,
     description:
       'A framework for player abilities: castable actives, always-on passives, and triggered abilities that fire on their own when a condition is met. Levels, cooldowns, requirements, and full datapack configuration, with an API for building your own.',
-    tags: ['NeoForge 1.21.1'],
+    tags: ['Forge 1.20.1', 'NeoForge 1.21.1'],
   },
   {
     path: '/alchemical',

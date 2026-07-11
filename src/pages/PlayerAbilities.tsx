@@ -267,7 +267,7 @@ export const PlayerAbilities = () => {
                 <li>
                   <Key>Z</Key> <span className="font-semibold">Ability Wheel</span> opens a radial
                   selector of your active abilities, grouped into pages by category. Click a slice
-                  to select it, and scroll to page through categories.
+                  to select it, and scroll or click the on-wheel arrows to page through categories.
                 </li>
                 <li>
                   <Key>X</Key> <span className="font-semibold">Use Selected Ability</span> fires the
