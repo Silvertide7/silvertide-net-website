@@ -52,6 +52,16 @@ const mods: Mod[] = [
     tags: ['Forge 1.20.1', 'NeoForge 1.21.1'],
   },
   {
+    path: '/mortal-boons',
+    logo: '/mortal-boons/mortal_boons_logo.png',
+    title: '/mortal-boons/mortal_boons_title.png',
+    titleAlt: 'Mortal Boons',
+    centerTitle: true,
+    description:
+      'A rogue-like boon mechanic. Pay experience and offerings at the Fatestone to roll boons like attributes or abilities, each at a random tier. Hold up to three, and lose them all when you die. Add more reasons to stay alive.',
+    tags: ['NeoForge 1.21.1'],
+  },
+  {
     path: '/alchemical',
     logo: '/alchemical/elixir_logo_450.png',
     title: '/alchemical/minecraft_title_hd.png',

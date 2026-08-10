@@ -8,6 +8,8 @@ import { Alchemical } from './pages/Alchemical'
 import { AlchemicalBuilder } from './pages/AlchemicalBuilder'
 import { Kindred } from './pages/Kindred'
 import { PlayerAbilities } from './pages/PlayerAbilities'
+import { MortalBoons } from './pages/MortalBoons'
+import { MortalBoonsBuilder } from './pages/MortalBoonsBuilder'
 
 function App() {
   return (
@@ -22,6 +24,8 @@ function App() {
           <Route path="alchemical/ingredient-builder" element={<AlchemicalBuilder />} />
           <Route path="kindred" element={<Kindred />} />
           <Route path="player-abilities" element={<PlayerAbilities />} />
+          <Route path="mortal-boons" element={<MortalBoons />} />
+          <Route path="mortal-boons/datapack-builder" element={<MortalBoonsBuilder />} />
         </Route>
       </Routes>
     </BrowserRouter>
