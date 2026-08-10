@@ -14,6 +14,7 @@ const MODS: ModLink[] = [
   { path: '/alchemical', label: 'Alchemical', logo: '/alchemical/elixir_logo_450.png' },
   { path: '/kindred', label: 'Kindred', logo: '/kindred/kindred_logo.png' },
   { path: '/player-abilities', label: 'Player Abilities', logo: '/player-abilities/logo.png' },
+  { path: '/mortal-boons', label: 'Mortal Boons', logo: '/mortal-boons/mortal_boons_logo.png' },
 ]
 
 const linkBase =

@@ -8,6 +8,8 @@ const LABELS: Record<string, string> = {
   alchemical: 'Alchemical',
   'ingredient-builder': 'Ingredient Builder',
   kindred: 'Kindred',
+  'mortal-boons': 'Mortal Boons',
+  'datapack-builder': 'Datapack Builder',
 }
 
 export const Breadcrumb = () => {
