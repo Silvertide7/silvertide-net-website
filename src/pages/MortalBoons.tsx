@@ -10,7 +10,6 @@ const IMG = {
   power1: '/mortal-boons/fatestone_power_1.png',
   power2: '/mortal-boons/fatestone_power_2.png',
   power3: '/mortal-boons/fatestone_power_3.png',
-  fullMenu: '/mortal-boons/full_menu_screenshot_with_3_cards_filled_out.png',
   temptFate: '/mortal-boons/no_boons_tempt_fate_button.png',
   offerings: '/mortal-boons/highlight_tempt_fate_button_show_offerings.png',
   cardSingle: '/mortal-boons/single_boon_iron_titans_arm_0.5_knockback_card.png',
@@ -166,17 +165,42 @@ export const MortalBoons = () => {
           {activeTab === 'overview' && (
             <div className="space-y-5 p-6">
               <Body>
+                Most progression is permanent. Once you have the gear, the enchants, the effects,
+                dying is an inconvenience. Mortal Boons adds a layer of power that is genuinely at
+                stake. You get strong, you get attached, and then you get careless. It fits any
+                pack where death should mean something, and the configs let you tune how harsh
+                that is.
+              </Body>
+
+              <Body>
                 Mortal Boons adds a rogue-like boon mechanic to Minecraft. Pay experience levels
                 and item offerings at the Fatestone to roll a random boon: attribute bonuses like
                 health, speed, or attack damage, each at a random tier. You can hold up to three at
                 once. When you die, you lose all of them. Add more reasons to stay alive.
               </Body>
 
-              <Screenshot
-                src={IMG.fullMenu}
-                alt="The Fatestone menu with three boon cards"
-                caption="The Fatestone menu with three boons held"
-              />
+              <Divider />
+
+              <div className="space-y-3">
+                <SectionLabel>See it in action</SectionLabel>
+                <div
+                  className="relative w-full overflow-hidden rounded-lg border border-zinc-200 dark:border-zinc-600"
+                  style={{ padding: '56.25% 0 0 0' }}
+                >
+                  <iframe
+                    src="https://www.youtube.com/embed/1544R4yWa2s"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    referrerPolicy="strict-origin-when-cross-origin"
+                    allowFullScreen
+                    title="Mortal Boons Demo"
+                    className="absolute top-0 left-0 h-full w-full border-0"
+                  />
+                </div>
+                <p className="text-center text-sm text-zinc-400">
+                  A two minute tour: placing the Fatestone, empowering it with candles and a
+                  beacon, rolling boons, hitting the cooldown, and trying reforge and reroll.
+                </p>
+              </div>
 
               <Divider />
 
@@ -373,18 +397,6 @@ export const MortalBoons = () => {
                 </Body>
               </div>
 
-              <Divider />
-
-              <div className="space-y-3">
-                <SectionLabel>Why Mortal Boons?</SectionLabel>
-                <Body>
-                  Most progression is permanent. Once you have the gear, the enchants, the effects,
-                  dying is an inconvenience. Mortal Boons adds a layer of power that is genuinely
-                  at stake. You get strong, you get attached, and then you get careless. It fits
-                  any pack where death should mean something, and the configs let you tune how
-                  harsh that is.
-                </Body>
-              </div>
             </div>
           )}
 
