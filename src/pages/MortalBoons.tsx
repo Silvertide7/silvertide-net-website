@@ -88,9 +88,14 @@ const configCategories = [
     knobs: 'Base XP level cost, added cost per roll, and a max cost cap. Costs reset on death.',
   },
   {
-    name: 'Reroll / Reforge / Forsake costs',
+    name: 'Temper / Reroll / Forsake costs',
     knobs:
-      'Base, per-use, and max XP costs for each action, plus an option to share the reroll and reforge counters.',
+      'Base, per-use, and max XP costs for each action, plus an option to share the reroll and temper counters.',
+  },
+  {
+    name: 'Death',
+    knobs:
+      'How many boons death claims, chosen at random. Defaults to all 3. Set it to 1 or 2 to lose only part of what you hold, or 0 to make boons permanent.',
   },
   {
     name: 'Cooldowns',
@@ -100,7 +105,7 @@ const configCategories = [
   {
     name: 'Action gating',
     knobs:
-      'Allow reroll, reforge, and forsake individually, and set the Fatestone power and held boon count each one requires.',
+      'Allow reroll, temper, and forsake individually, and set the Fatestone power and held boon count each one requires.',
   },
   {
     name: 'Offerings',
@@ -198,7 +203,7 @@ export const MortalBoons = () => {
                 </div>
                 <p className="text-center text-sm text-zinc-400">
                   A two minute tour: placing the Fatestone, empowering it with candles and a
-                  beacon, rolling boons, hitting the cooldown, and trying reforge and reroll.
+                  beacon, rolling boons, hitting the cooldown, and trying reroll and temper.
                 </p>
               </div>
 
@@ -236,7 +241,7 @@ export const MortalBoons = () => {
                 </div>
                 <BulletList
                   items={[
-                    'Power gates the deeper actions: rerolling unlocks at power 2, reforging at power 3 (configurable).',
+                    'Power gates the deeper actions: tempering unlocks at power 2, rerolling at power 3 (configurable).',
                     'Weakening the setup never removes boons you already hold. It just locks slots and actions until you restore it.',
                   ]}
                 />
@@ -343,10 +348,11 @@ export const MortalBoons = () => {
               <Divider />
 
               <div className="space-y-3">
-                <SectionLabel>Reroll, Reforge, Forsake</SectionLabel>
+                <SectionLabel>Temper, Reroll, Forsake</SectionLabel>
                 <Body>
-                  Hover a held boon's card to see its actions. Each one costs experience, and the
-                  cost goes up the more you use it.
+                  Hover a held boon's card to see its actions. The card stays readable behind the
+                  buttons, so you can weigh what you have before you change it. Each action costs
+                  experience, and the cost goes up the more you use it.
                 </Body>
                 <Screenshot
                   src={IMG.cardButtons}
@@ -357,15 +363,17 @@ export const MortalBoons = () => {
                   items={[
                     <>
                       <strong className="font-medium text-zinc-800 dark:text-zinc-100">
-                        Reroll
+                        Temper
                       </strong>
-                      : trade the boon for a different one at a newly rolled tier.
+                      : keep the boon, reroll only its tier. It can fall as easily as it rises.
+                      Unlocks at power 2 while holding 2 boons.
                     </>,
                     <>
                       <strong className="font-medium text-zinc-800 dark:text-zinc-100">
-                        Reforge
+                        Reroll
                       </strong>
-                      : reroll just the tier. It can fall as easily as it rises.
+                      : trade the boon for a different one at a newly rolled tier. Unlocks at power
+                      3 while holding 3 boons.
                     </>,
                     <>
                       <strong className="font-medium text-zinc-800 dark:text-zinc-100">
@@ -390,10 +398,15 @@ export const MortalBoons = () => {
                 </div>
                 <SectionLabel>Death</SectionLabel>
                 <Body>
-                  Death wipes every boon you hold. That is the core of the mod: boons make you
-                  powerful, but the power is never really yours. Your escalating roll costs reset
-                  on death too, so climbing back up is cheaper than it was on the way down. The
-                  cooldown survives death, you cannot die your way out of waiting.
+                  By default, death wipes every boon you hold. That is the core of the mod: boons
+                  make you powerful, but the power is never really yours. Your escalating roll costs
+                  reset on death too, so climbing back up is cheaper than it was on the way down.
+                  The cooldown survives death, you cannot die your way out of waiting.
+                </Body>
+                <Body>
+                  How much death takes is a config. Set it to claim 1 or 2 boons instead of all 3
+                  and you keep part of what you built, or set it to 0 and boons become permanent
+                  progression instead of a gamble.
                 </Body>
               </div>
 
@@ -574,7 +587,7 @@ export const MortalBoons = () => {
                 },
                 {
                   q: 'Do boons really disappear on death?',
-                  a: 'Yes, all of them, every time. That is the entire point of the mod. The cooldown survives death though, so you cannot die on purpose to skip the wait.',
+                  a: 'By default, yes, all of them, every time. That is the entire point of the mod. The cooldown survives death though, so you cannot die on purpose to skip the wait. If that is too harsh for your pack, a config sets how many boons death claims, down to none at all.',
                 },
                 {
                   q: 'Can I change the boons, costs, and odds?',
@@ -619,6 +632,7 @@ export const MortalBoons = () => {
             />
             <DownloadLinks
               curseforgeUrl="https://www.curseforge.com/minecraft/mc-mods/mortal-boons"
+              modrinthUrl="https://modrinth.com/mod/mortal-boons"
               discordUrl="https://discord.gg/cpRzXtSaSr"
             />
           </div>
