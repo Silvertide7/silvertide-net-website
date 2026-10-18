@@ -15,20 +15,23 @@ const MODS: ModLink[] = [
   { path: '/kindred', label: 'Kindred', logo: '/kindred/kindred_logo.png' },
   { path: '/player-abilities', label: 'Player Abilities', logo: '/player-abilities/logo.png' },
   { path: '/mortal-boons', label: 'Mortal Boons', logo: '/mortal-boons/mortal_boons_logo.png' },
+  {
+    path: '/beasts-and-bounties',
+    label: 'Beasts & Bounties',
+    logo: '/beasts-and-bounties/logo.png',
+  },
 ]
 
-const linkBase =
-  'flex items-center gap-2.5 rounded-lg px-3 py-2 text-sm font-medium transition'
+const linkBase = 'flex items-center gap-2.5 rounded-lg px-3 py-2 text-sm font-medium transition'
 const linkInactive =
   'text-zinc-500 hover:bg-zinc-200/60 hover:text-zinc-800 dark:text-zinc-400 dark:hover:bg-zinc-700/60 dark:hover:text-zinc-100'
-const linkActive =
-  'bg-zinc-200 text-zinc-900 dark:bg-zinc-700 dark:text-zinc-100'
+const linkActive = 'bg-zinc-200 text-zinc-900 dark:bg-zinc-700 dark:text-zinc-100'
 
 const linkClass = ({ isActive }: { isActive: boolean }) =>
   `${linkBase} ${isActive ? linkActive : linkInactive}`
 
 export const ModNav = () => (
-  <aside className="fixed top-0 left-0 z-40 hidden h-screen w-52 flex-col border-r border-zinc-200 bg-zinc-50 px-3 py-6 dark:border-zinc-700 dark:bg-zinc-900 lg:flex">
+  <aside className="fixed top-0 left-0 z-40 hidden h-screen w-52 flex-col border-r border-zinc-200 bg-zinc-50 px-3 py-6 lg:flex dark:border-zinc-700 dark:bg-zinc-900">
     <NavLink to={HOME.path} end className={linkClass}>
       <svg
         viewBox="0 0 16 16"
