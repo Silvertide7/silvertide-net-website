@@ -10,6 +10,7 @@ const LABELS: Record<string, string> = {
   kindred: 'Kindred',
   'mortal-boons': 'Mortal Boons',
   'datapack-builder': 'Datapack Builder',
+  'beasts-and-bounties': 'Beasts & Bounties',
 }
 
 export const Breadcrumb = () => {

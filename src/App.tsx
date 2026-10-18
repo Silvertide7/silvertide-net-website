@@ -10,6 +10,7 @@ import { Kindred } from './pages/Kindred'
 import { PlayerAbilities } from './pages/PlayerAbilities'
 import { MortalBoons } from './pages/MortalBoons'
 import { MortalBoonsBuilder } from './pages/MortalBoonsBuilder'
+import { BeastsAndBounties } from './pages/BeastsAndBounties'
 
 function App() {
   return (
@@ -26,6 +27,7 @@ function App() {
           <Route path="player-abilities" element={<PlayerAbilities />} />
           <Route path="mortal-boons" element={<MortalBoons />} />
           <Route path="mortal-boons/datapack-builder" element={<MortalBoonsBuilder />} />
+          <Route path="beasts-and-bounties" element={<BeastsAndBounties />} />
         </Route>
       </Routes>
     </BrowserRouter>
